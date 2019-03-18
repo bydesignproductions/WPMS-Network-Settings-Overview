@@ -1,0 +1,16 @@
+Select Sites.Name
+,(Select option_value FROM `wp_options` where option_name = Sites.Name) as DB1
+,(Select option_value FROM `wp_2_options` where option_name = Sites.Name) as DB2
+,(Select option_value FROM `wp_3_options` where option_name = Sites.Name) as DB3
+,(Select option_value FROM `wp_4_options` where option_name = Sites.Name) as DB4
+	From (Select Distinct Options.Name
+		From (
+		SELECT option_name AS `Name` FROM `wp_options` where autoload = 'Yes'
+		Union
+		SELECT option_name AS `Name` FROM `wp_2_options` where autoload = 'Yes'
+		Union
+		SELECT option_name AS `Name` FROM `wp_3_options` where autoload = 'Yes'
+		Union
+		SELECT option_name AS `Name` FROM `wp_4_options` where autoload = 'Yes'
+		)as Options
+	)as Sites

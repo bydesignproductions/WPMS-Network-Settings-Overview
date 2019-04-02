@@ -1,6 +1,6 @@
 # WP Multisite Network Settings Overview - Compare
 
-SQL script  to compare Wordpress Network Site settings side by side
+SQL script (GIST?) to compare Wordpress Network Site settings side by side
 
 Planned Plugin:
 1. Pull full Site List from wp_blogs 
